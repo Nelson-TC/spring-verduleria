@@ -1,0 +1,42 @@
+# Active Profile
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/verduleria
+    username: root
+    password: ''
+
+# Dev Profile
+---
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mvc:
+    throw-exception-if-no-handler-found: true
+    throw-no-handler-found: true
+  logging:
+    level:
+      org.springframework: DEBUG
+      com.example.springverduleria: DEBUG
+  config:
+    activate:
+      on-profile: dev
+
+# Prod Profile
+---
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+  mvc:
+    throw-exception-if-no-handler-found: false
+    throw-no-handler-found: false
+  logging:
+    level:
+      org.springframework: INFO
+      com.example.springverduleria: INFO
+  config:
+    activate:
+      on-profile: prod

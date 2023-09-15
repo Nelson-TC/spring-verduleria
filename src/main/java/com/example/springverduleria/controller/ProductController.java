@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RequestMapping("/api/products")
-@CrossOrigin(origins = "*")
+    @CrossOrigin(origins = "*")
 @RestController
 public class ProductController {
     private final ProductService productService;

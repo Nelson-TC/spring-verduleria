@@ -33,7 +33,7 @@ public class Product {
     private String unitMeasurement;
 
     @Column(name = "category_id")
-    /*@ValidCategoryId(message = "El ID de la categoria no es valida")*/
+    @NotNull(message = "La categoria es obligatoria")
     private Long categoryId;
 
     @ManyToOne(

@@ -6,6 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3306/verduleria
     username: root
     password: ''
+  jwt: "21a831a66ce16224c61781805e819d0f24cd559956a0a4bc29322344b636eff9"
 
 # Dev Profile
 ---

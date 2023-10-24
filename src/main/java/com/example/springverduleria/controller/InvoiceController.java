@@ -52,6 +52,12 @@ public class InvoiceController {
         }
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteInvoice(@PathVariable Long id) {
+        boolean deleted = invoiceService.deleteInvoice(id);
+        return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
+
     @PostMapping("/create/{saleId}")
     public ResponseEntity<?> createInvoice(@Valid @RequestBody Invoice invoice, BindingResult bindingResult, @PathVariable Long saleId) {
         if (bindingResult.hasErrors()) {

@@ -34,6 +34,7 @@ public class SecurityConfig {
 
     private RequestMatcher publicEndPoints() {
         return new OrRequestMatcher(
+                /*new AntPathRequestMatcher("/api/**")*/
                 new AntPathRequestMatcher("/api/auth/authenticate")
                 /*new AntPathRequestMatcher(//path) -- do this for every public route */
         );

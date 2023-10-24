@@ -69,6 +69,11 @@ public class SaleController {
         }
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteSale(@PathVariable Long id) {
+        boolean deleted = saleService.deleteSale(id);
+        return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
+    }
 
     @PostMapping("/create")
     public ResponseEntity<?> createSale(@RequestBody SaleRequest request) {

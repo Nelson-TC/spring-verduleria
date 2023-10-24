@@ -20,6 +20,14 @@ public class SaleService {
         return saleRepository.findAll();
     }
 
+    public boolean deleteSale(Long id){
+        if(saleRepository.existsById(id)){
+            saleRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
     public Optional<Sale> getSaleById(Long id){
         return saleRepository.findById(id);
     }

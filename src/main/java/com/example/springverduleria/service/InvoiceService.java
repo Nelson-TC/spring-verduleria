@@ -34,4 +34,12 @@ public class InvoiceService {
         return invoiceRepository.save(invoice);
     }
 
+    public boolean deleteInvoice(Long id){
+        if(invoiceRepository.existsById(id)){
+            invoiceRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 }
